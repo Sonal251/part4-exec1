@@ -2,8 +2,7 @@
 	ini_set('display_errors', 'On');
 	error_reporting(E_ALL);
 
-	$executionStartTime = microtime(true);
-
+	
 	$url='http://api.geonames.org/earthquakesJSON?formatted=true&north=44.1&south=-9.9&east=-22.4&west=55.2&username=son2517';
 
 	$ch = curl_init();
