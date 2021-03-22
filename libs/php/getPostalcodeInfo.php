@@ -2,7 +2,7 @@
 	ini_set('display_errors', 'On');
 	error_reporting(E_ALL);
 
-	$executionStartTime = microtime(true);
+	
 
 	$url='http://api.geonames.org/postalCodeCountryInfoJSON?formatted=true&&username=son2517&style=full';
 
