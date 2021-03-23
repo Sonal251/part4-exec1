@@ -2,7 +2,7 @@
 //earthquake
 function constructTable(earthQuakeResult) {
     let domStr = "<table>";
-    domStr += "<tr><th>Datetime</th><th>Magitude</th><th>Latutude</th><th>Longitude</th></tr>"
+    domStr += "<tr><th>Date Time</th><th>Magitude</th><th>Latitude</th><th>Longitude</th></tr>"
     for (let i = 0; i < earthQuakeResult.length; i++) {
         const { datetime, magnitude, lat, lng } = earthQuakeResult[i];
         domStr += "<tr>";
@@ -21,7 +21,14 @@ $(document).ready(function () {
             url: "libs/php/getEarthquakeInfo.php",
             type: 'POST',
             dataType: 'json',
+            data: {
+                    north: $('#north').val(),
+                    south: $('#south').val(),
+                    east: $('#east').val(),
+                    west: $('#west').val()
 
+            },
+           
             success: function (result) {
 
                 console.log(JSON.stringify(result));
@@ -41,7 +48,7 @@ $(document).ready(function () {
     //weather
     function constructTable1(weatherResult) {
         let domStr = "<table>";
-        domStr += "<tr><th>Datetime</th><th>Temperature</th><th>Humidity</th><th>StationName</th></tr>"
+        domStr += "<tr><th>Date Time</th><th>Temperature</th><th>Humidity</th><th>Station Name</th></tr>"
         for (let i = 0; i < weatherResult.length; i++) {
             const { datetime, temperature, humidity, stationName } = weatherResult[i];
             domStr += "<tr>";
@@ -59,6 +66,13 @@ $(document).ready(function () {
             url: "libs/php/getWeatherInfo.php",
             type: 'POST',
             dataType: 'json',
+            data: {
+                north: $('#north2').val(),
+                south: $('#south2').val(),
+                east: $('#east2').val(),
+                west: $('#west2').val()
+
+        },
             success: function (result) {
 
                 console.log(JSON.stringify(result));
@@ -75,17 +89,15 @@ $(document).ready(function () {
 
     });
 
-    //postalcodecountryinfo
-    function constructTable2(postalResult) {
+    //wikiresult
+    function constructTable2(wikiResult) {
         let domStr = "<table>";
-        domStr += "<tr><th>Country Name</th><th>Number of Postal Codes</th><th>Min Postal Code</th><th>Max Postal Code</th></tr>"
-        for (let i = 0; i < postalResult.length; i++) {
-            const { countryName, numPostalCodes, minPostalCode, maxPostalCode} = postalResult[i];
+        domStr += "<tr><th>Name</th><th>Summary</th></tr>"
+        for (let i = 0; i < wikiResult.length; i++) {
+            const { title, summary } = wikiResult[i];
             domStr += "<tr>";
-            domStr += `<td>${countryName}</td>`;
-            domStr += `<td>${numPostalCodes}</td>`;
-            domStr += `<td>${minPostalCode}</td>`;
-            domStr += `<td>${maxPostalCode}</td>`;
+            domStr += `<td>${title}</td>`;
+            domStr += `<td>${summary}</td>`;
             domStr += "</tr>";
         }
         domStr += "</table>"
@@ -93,9 +105,13 @@ $(document).ready(function () {
     }
     $('#btnSubmit3').click(function () {
         $.ajax({
-            url: "libs/php/getPostalcodeInfo.php",
+            url: "libs/php/getWikiInfo.php",
             type: 'POST',
             dataType: 'json',
+            data: {
+                q: $('#q').val(),
+                maxRows: $('#maxRows').val()
+        },
                success: function (result) {
 
                 console.log(JSON.stringify(result));
@@ -112,41 +128,3 @@ $(document).ready(function () {
 
     });
 });
-
-
-
-
-
-
-
-
-
-/*    $.ajax({
-       url: "api.geonames.org/earthquakesJSON?",
-       contentType: 'application/json',
-       method: 'POST',
-       timeout: 3000,
-       data: {
-
-       },
-       success: function(data) {
-           console.log('success', data)
-       },
-       error: function(){
-           $('#error').show();
-       }
-   }); */
-
-/*     $.ajax({
-        type: "GET",
-        url: "libs/php/getEarthquakeInfo.php",
-        success: function(data){
-            console.log(JSON.stringify(data));
-            if (data.status.name == "ok") {
-
-                $('#des1').html(data['data'][0]['continent']);
-
-            }
-        }
-
-    }); */
