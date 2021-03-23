@@ -1,9 +1,8 @@
 <?php
 	ini_set('display_errors', 'On');
 	error_reporting(E_ALL);
-
 	
-	$url='http://api.geonames.org/earthquakesJSON?formatted=true&north=44.1&south=-9.9&east=-22.4&west=55.2&username=son2517';
+	$url='http://api.geonames.org/earthquakesJSON?formatted=true&north=' . $_REQUEST['north'] . '&south=' . $_REQUEST['south'] . '&east=' . $_REQUEST['east'] . '&west=' . $_REQUEST['west'] . '&username=son2517';
 
 	$ch = curl_init();
 	//rethink
