@@ -8,8 +8,7 @@
         <title>Task one - API</title>
 
         <link rel="stylesheet" type="text/css" href="./libs/css/style.css"/>
-
-                  
+               
     </head>
 	<body>
     	<div>
@@ -21,17 +20,96 @@
 				</tr>
 				<tr>
                     <td>1.</td>
-                    <td>Earthquake</td>
-                    <td><Button id="btnSubmit1">Submit</Button></td>
+                    <td>Earthquake : 
+                        <select name="north" id="north">
+                            <option selected disabled>North</option>
+                            <option value="44.1">44.1</option>
+                            <option value="33.5">33.5</option>
+                            <option value="42.5">42.5</option>
+                            <option value="44.8">44.8</option>
+                        </select>
+                        <select name="south" id="south">
+                            <option selected disabled>South</option>
+                            <option value="-9.9">-9.9</option>
+                            <option value="7.8">7.8</option>
+                            <option value="8.5">8.5</option>
+                            <option value="8.4">8.4</option>
+                        </select>
+                        <select name="east" id="east">
+                            <option selected disabled>East</option>
+                            <option value="22.4">22.4</option>
+                            <option value="11.5">11.5</option>
+                            <option value="20.5">20.5</option>
+                            <option value="8.4">8.4</option>
+                        </select>
+                        <select name="west" id="west">
+                            <option selected disabled>West</option>
+                            <option value="55.5">55.5</option>
+                            <option value="65.2">65.2</option>
+                            <option value="48.2">48.2</option>
+                            <option value="78.2">78.2</option>
+                        </select>
+                    </td>
+                    <td><Button id="btnSubmit1" >Submit</Button></td>
 				</tr>
                 <tr>
                     <td>2.</td>
-                    <td>Weather Observations</td>
+                    <td>Weather Observations : 
+                        <select name="north2" id="north2">
+                            <option selected disabled>North</option>
+                            <option value="44.1">44.1</option>
+                            <option value="33.5">33.5</option>
+                            <option value="42.5">42.5</option>
+                            <option value="44.8">44.8</option>
+                        </select>
+                        <select name="south2" id="south2">
+                            <option selected disabled>South</option>
+                            <option value="-9.9">-9.9</option>
+                            <option value="7.8">7.8</option>
+                            <option value="8.5">8.5</option>
+                            <option value="8.4">8.4</option>
+                        </select>
+                        <select name="east2" id="east2">
+                            <option selected disabled>East</option>
+                            <option value="22.4">22.4</option>
+                            <option value="11.5">11.5</option>
+                            <option value="20.5">20.5</option>
+                            <option value="8.4">8.4</option>
+                        </select>
+                        <select name="west2" id="west2">
+                            <option selected disabled>West</option>
+                            <option value="55.5">55.5</option>
+                            <option value="65.2">65.2</option>
+                            <option value="48.2">48.2</option>
+                            <option value="78.2">78.2</option>
+                        </select>
+                    </td>
                     <td><Button id="btnSubmit2">Submit</Button></td>
 				</tr>
                 <tr>
                     <td>3.</td>
-                    <td>Postal Codes</td>
+                    <td>Select a city to view facts:
+                        <select name="q" id="q">
+                            <option selected disabled>City</option>
+                            <option value="London">London</option>
+                            <option value="California">California</option>
+                            <option value="Budapest">Budapest</option>
+                            <option value="Reykjavík">Reykjavík</option>
+                        </select>
+                        <select name="maxRows" id="maxRows">
+                            <option selected disabled>Rows</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </td>
                     <td><Button id="btnSubmit3">Submit</Button></td>
 				</tr>
 
@@ -44,6 +122,6 @@
 		</div>
         <div id="result"></div>
 	</body>
-	   <script type="application/javascript" src="./libs/js/jquery-2.2.3.min.js"></script>
-        <script type="application/javascript" src="./libs/js/script.js"></script>  
+    <script type="application/javascript" src="./libs/js/jquery-2.2.3.min.js"></script>
+    <script type="application/javascript" src="./libs/js/script.js"></script>
 </html>
